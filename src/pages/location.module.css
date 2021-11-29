@@ -1,0 +1,25 @@
+
+
+.form{
+    color : red;
+    margin-left: 30%;
+    margin-top: 50px;
+    background-color: bisque;
+    
+    
+}
+
+.form input{
+    display: block;
+    margin-bottom: 10px;
+    width: 40%;
+    
+}
+
+*{
+    background-image: url(image.jpg);
+    
+}
+.form nav{
+    border: 5px blue solid;
+}
