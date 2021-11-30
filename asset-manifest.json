@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/senditff/static/css/main.45144f8e.chunk.css",
+    "main.js": "/senditff/static/js/main.b6f8cb21.chunk.js",
+    "main.js.map": "/senditff/static/js/main.b6f8cb21.chunk.js.map",
+    "runtime-main.js": "/senditff/static/js/runtime-main.26cc6995.js",
+    "runtime-main.js.map": "/senditff/static/js/runtime-main.26cc6995.js.map",
+    "static/js/2.25cb8f9a.chunk.js": "/senditff/static/js/2.25cb8f9a.chunk.js",
+    "static/js/2.25cb8f9a.chunk.js.map": "/senditff/static/js/2.25cb8f9a.chunk.js.map",
+    "index.html": "/senditff/index.html",
+    "static/css/main.45144f8e.chunk.css.map": "/senditff/static/css/main.45144f8e.chunk.css.map",
+    "static/js/2.25cb8f9a.chunk.js.LICENSE.txt": "/senditff/static/js/2.25cb8f9a.chunk.js.LICENSE.txt",
+    "static/media/admin.module.css": "/senditff/static/media/image.0fd758cb.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.26cc6995.js",
+    "static/js/2.25cb8f9a.chunk.js",
+    "static/css/main.45144f8e.chunk.css",
+    "static/js/main.b6f8cb21.chunk.js"
+  ]
+}
