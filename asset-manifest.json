@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/senditff/static/css/main.45144f8e.chunk.css",
-    "main.js": "/senditff/static/js/main.b6f8cb21.chunk.js",
-    "main.js.map": "/senditff/static/js/main.b6f8cb21.chunk.js.map",
-    "runtime-main.js": "/senditff/static/js/runtime-main.26cc6995.js",
-    "runtime-main.js.map": "/senditff/static/js/runtime-main.26cc6995.js.map",
-    "static/js/2.25cb8f9a.chunk.js": "/senditff/static/js/2.25cb8f9a.chunk.js",
-    "static/js/2.25cb8f9a.chunk.js.map": "/senditff/static/js/2.25cb8f9a.chunk.js.map",
-    "index.html": "/senditff/index.html",
-    "static/css/main.45144f8e.chunk.css.map": "/senditff/static/css/main.45144f8e.chunk.css.map",
-    "static/js/2.25cb8f9a.chunk.js.LICENSE.txt": "/senditff/static/js/2.25cb8f9a.chunk.js.LICENSE.txt",
-    "static/media/admin.module.css": "/senditff/static/media/image.0fd758cb.jpg"
+    "main.css": "/seenditff/static/css/main.30947a23.chunk.css",
+    "main.js": "/seenditff/static/js/main.b6f8cb21.chunk.js",
+    "main.js.map": "/seenditff/static/js/main.b6f8cb21.chunk.js.map",
+    "runtime-main.js": "/seenditff/static/js/runtime-main.42444880.js",
+    "runtime-main.js.map": "/seenditff/static/js/runtime-main.42444880.js.map",
+    "static/js/2.25cb8f9a.chunk.js": "/seenditff/static/js/2.25cb8f9a.chunk.js",
+    "static/js/2.25cb8f9a.chunk.js.map": "/seenditff/static/js/2.25cb8f9a.chunk.js.map",
+    "index.html": "/seenditff/index.html",
+    "static/css/main.30947a23.chunk.css.map": "/seenditff/static/css/main.30947a23.chunk.css.map",
+    "static/js/2.25cb8f9a.chunk.js.LICENSE.txt": "/seenditff/static/js/2.25cb8f9a.chunk.js.LICENSE.txt",
+    "static/media/admin.module.css": "/seenditff/static/media/image.0fd758cb.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.26cc6995.js",
+    "static/js/runtime-main.42444880.js",
     "static/js/2.25cb8f9a.chunk.js",
-    "static/css/main.45144f8e.chunk.css",
+    "static/css/main.30947a23.chunk.css",
     "static/js/main.b6f8cb21.chunk.js"
   ]
 }
