@@ -1,6 +1,6 @@
 {
   "homepage": "https://tohaf.github.io/senditff",
-  "name": "frontend",
+  "name": "senditff",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
