@@ -22,7 +22,9 @@ function WelcomePage(){
                     <Link to='/admin'> Admin section</Link>
                 </nav>
             </div>
+            
         </div>
+        
     )
 
 }

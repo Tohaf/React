@@ -1,5 +1,5 @@
 
-import { Routes, Route } from "react-router";
+import { Routes, Route, Outlet } from "react-router";
 
 import CancelData from "./pages/delete";
 
@@ -27,7 +27,9 @@ function App() {
         <Route path='/receive' element={< ReceiveAll />}  />
 
         <Route path='/cancel' element={< CancelData />}  />
+        
       </Routes>
+      <Outlet />
     
     </div>
 
