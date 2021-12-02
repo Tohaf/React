@@ -8,6 +8,7 @@ import DesForm from './pages/destination';
 import RegisterData from './pages/get';
 import LocationData from './pages/location';
 import LocForm from './pages/status';
+import WelcomePage from "./pages/main";
 
 
 
@@ -16,8 +17,9 @@ import LocForm from './pages/status';
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
+      <Route path='/'  exact element={< WelcomePage />}  />
+
       <Route path='*'  element={<App />} />
-      
 
       <Route path='/get' element={<RegisterData />} />
 

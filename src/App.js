@@ -1,6 +1,6 @@
 
 import { Routes, Route } from "react-router";
-import WelcomePage from "./pages/main";
+
 import CancelData from "./pages/delete";
 
 
@@ -23,8 +23,6 @@ function App() {
         <Route path='/register' element={< RegisterParcel />}  />
 
         <Route path='/post' element={< PostParcel />}  />
-
-        <Route path='/' element={< WelcomePage />}  />
 
         <Route path='/receive' element={< ReceiveAll />}  />
 
