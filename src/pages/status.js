@@ -18,7 +18,7 @@ function LocForm(props) {
             "status" : enteredLoc,
             "id": enteredPass
         }
-        fetch(`http://localhost:5000/parcel/${id}/status`, {
+        fetch(`https://web-app-senditb.herokuapp.com/parcel/${id}/status`, {
             method: 'put',
             body: JSON.stringify(GetData),
             crossDomain: true,

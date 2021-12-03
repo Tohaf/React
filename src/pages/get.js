@@ -13,7 +13,7 @@ function RegisterData(){
 
         const FirstName = firstnameRef.current.value;
     
-        fetch(`http://localhost:5000/parcel/:id/search?name=${FirstName}`).then(
+        fetch(`https://web-app-senditb.herokuapp.com/parcel/:id/search?name=${FirstName}`).then(
             response => response.json()).then(data => {
                 setGetResult(
                     data.map((val) => {

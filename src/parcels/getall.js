@@ -7,7 +7,7 @@ function ReceiveAll() {
     const [loadData, setLoadtData] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/parcel/getall').then(
+        fetch('https://web-app-senditb.herokuapp.com/parcel/getall').then(
             response => response.json()
         ).then((data) => {
             const parcels = [];

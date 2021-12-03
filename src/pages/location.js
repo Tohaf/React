@@ -18,7 +18,7 @@ function LocationData() {
                 "location": location,
                 "id": Id
             }
-            fetch(`http://localhost:5000/parcel/${id}/location`, {
+            fetch(`https://web-app-senditb.herokuapp.com/parcel/${id}/location`, {
                 method: 'PUT',
                 body: JSON.stringify(add),
                 mode:'cors',

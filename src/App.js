@@ -8,8 +8,10 @@ import LocationData from './pages/location';
 import LocForm from './pages/status';
 import WelcomePage from "./pages/main";
 
-
 import AdminParcel from "./parcels/Admin1";
+
+
+
 import ReceiveAll from "./parcels/getall";
 import LoginParcel from "./parcels/login";
 import PostParcel from "./parcels/post";
@@ -35,6 +37,7 @@ function App() {
 
         <Route index  element={< WelcomePage />}  />
        
+        <Route path='/admin' element={<AdminParcel />} />
 
         <Route path='/get' element={<RegisterData />} />
 

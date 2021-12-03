@@ -5,7 +5,7 @@ function RegisterParcel(){
     const Navigate = useNavigate();
 
     function AdminDetail(GetData){
-        fetch('http://localhost:5000/register/pass', {
+        fetch('https://web-app-senditb.herokuapp.com/register/pass', {
             method: 'POST',
             body: JSON.stringify(GetData),
             headers:{

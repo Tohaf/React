@@ -23,7 +23,7 @@ function DesForm() {
         }
 
 
-        fetch(`http://localhost:5000/parcel/${id}/destination`, {
+        fetch(`https://web-app-senditb.herokuapp.com/parcel/${id}/destination`, {
 
             method: 'PUT',
             body: JSON.stringify(dat),

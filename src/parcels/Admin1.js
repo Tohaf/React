@@ -5,7 +5,7 @@ function AdminParcel(){
     const navigate = useNavigate();
 
     function AdminDetail(GetData){
-        fetch(' http://localhost:5000/admin/add', {
+        fetch('https://web-app-senditb.herokuapp.com/admin/add', {
             method: 'POST',
             body: JSON.stringify(GetData),
             headers: {

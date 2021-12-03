@@ -5,7 +5,7 @@ function LoginParcel() {
     const history = useNavigate(null);
 
     function AdminDetail(GetData) {
-        fetch('http://localhost:5000/register/login', {
+        fetch('https://web-app-senditb.herokuapp.com/register/login', {
             method: 'POST',
             body: JSON.stringify(GetData),
             headers: {

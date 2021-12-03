@@ -9,15 +9,13 @@ import './index.css';
 
 
 
-
-
 ReactDOM.render(
-  <BrowserRouter basename={window.location.pathname || ''} >
+  <BrowserRouter basename={process.env.PUBLIC_URL} >
     <Routes>
 
-      <Route exact path= '/'  element={<App />}  />
+      <Route exact path= '*'  element={<App />}  />
         
-       
+     
       
 
     </Routes>
