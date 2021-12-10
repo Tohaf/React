@@ -20,7 +20,7 @@ function LoginParcel() {
         .then((data) => {
             if(data){
                 console.log(data);
-                History('/get');
+                History('/post');
             
 
             }
