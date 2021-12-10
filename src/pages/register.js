@@ -23,7 +23,7 @@ function RegisterForm(props) {
             password: enteredPass,
             fistname: enteredFirst,
             lastname: enteredLast,
-            Email: enteredEmail
+            email: enteredEmail
         }
         props.sendData(GetData);
     };

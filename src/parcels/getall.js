@@ -1,43 +1,68 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react/cjs/react.development";
-import GetAll from "../pages/getall";
+import { useState } from "react";
 
 
 function ReceiveAll() {
-    const [loadData, setLoadtData] = useState([]);
 
-    useEffect(() => {
-        fetch('https://web-app-senditb.herokuapp.com/parcel/getall').then(
-            response => response.json()
-        ).then((data) => {
-            const parcels = [];
+    const [loadData, setLoadtData] = useState();
 
-            for (const key in data) {
-                const sendData = {
-                    id: key,
-                    ...data[key]
-                };
+    function GetAll(event){
+        event.preventDefault();
+        
+        
+            fetch('https://web-app-senditb.herokuapp.com/parcel/getall').then(
+                response => response.json()
+            ).then((data) => {
+               setLoadtData(
+                data.map((val) => {
+                    <val key={val.id} />
+                    return(
+                        <ul>
+                            < div>
+                                <li>Name: {val.name}</li>
+                                <li>Email: {val.email}</li>
+                                <li>Location: {val.location}</li>
+                                <li>destination: {val.destination}</li>
+                                <li>ID: {val._id}</li>
+                                <li>password: {val.password}</li>
+                                <li>{val.status}</li>
+                                <Link to='/cancel'> delete data</Link>
+                                <br/>
+                                <Link to='/destination'>update Location</Link>
+                                <br/>
+                                <Link to='/status'>update status</Link>
+                            
+                            </div>
 
-                parcels.push(sendData);
-            }
 
-            console.log(data);
-            setLoadtData(parcels);
+                        </ul>
+                      
+                    );
+                    
+                })
+               )
+    
+            });
+    
+        
+    }
 
-        });
-
-    }, [])
+    
 
 
 
     return (
-        <section>
+    
 
-            <h1> all parcels </h1>
-            <Link to='/get'> Get a specific parcel</Link>
-            <GetAll parcels={loadData} />
+            <form  onSubmit={GetAll}>
+            
+                <button type='submit'> Get all parcel </button>
+                <br/>
+                <br/>
+                <Link to='/get'> Get a specific parcel</Link>
 
-        </section>
+                {loadData && <div role='alert' ><pre>{loadData}</pre> </div>}
+            </form>
     );
 
 }
