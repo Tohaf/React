@@ -67,7 +67,7 @@ function RegisterData(){
                 <br/>
                 <Link to='/'> Back to homepage </Link>
                 <br/>
-                <Link to='/getall'> getall parcel </Link>
+                <Link to='/receive'> getall parcel </Link>
                 {getResult && <div role='alert'><pre>{getResult}</pre></div>}
             
             </form>
