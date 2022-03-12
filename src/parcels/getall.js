@@ -1,70 +1,83 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
 
+import { useState, useEffect, Fragment } from 'react';
+import Tbod from "./body";
+import LocForm from "../pages/status";
+import { Link } from 'react-router-dom';
 
 function ReceiveAll() {
+    const[contact, setContact] = useState([])
+    const [load, setLoad] = useState(false);
 
-    const [loadData, setLoadtData] = useState();
 
-    function GetAll(event){
-        event.preventDefault();
-        
-        
-            fetch('https://web-app-senditb.herokuapp.com/parcel/getall').then(
+    useEffect(() => {
+        fetch('https://web-app-senditb.herokuapp.com/parcel/getall')
+            .then(
                 response => response.json()
             ).then((data) => {
-               setLoadtData(
-                data.map((val) => {
-                    <val key={val.id} />
-                    return(
-                        <ul>
-                            < div>
-                                <li>Name: {val.name}</li>
-                                <li>Email: {val.email}</li>
-                                <li>Location: {val.location}</li>
-                                <li>destination: {val.destination}</li>
-                                <li>ID: {val._id}</li>
-                                <li>password: {val.password}</li>
-                                <li>{val.status}</li>
-                                <Link to='/cancel'> delete data</Link>
-                                <br/>
-                                <Link to='/destination'>update Location</Link>
-                                <br/>
-                                <Link to='/status'>update status</Link>
-                            
-                            </div>
+                
+                setContact(data)
 
-
-                        </ul>
-                      
-                    );
-                    
-                })
-               )
-    
             });
+    }, [contact]);
+
     
-        
+
+    function edity(){
+        setLoad(true);
     }
 
-    
+    function disappear(){
+        setLoad(load);
+    }
 
+    function delet(){
+        alert('deleted');
 
+    }
 
     return (
-    
+        <div >  
+            <Link to='../'>Logout</Link>
+            {load ? <LocForm oncance={disappear} /> : null }
+            <table cellPadding={40} cellSpacing={0} >
+                <thead>
+                    <tr>
+                        <th>orderid</th>
+                        <th>destination</th>
+                        <th>location</th>
+                        <th>status</th>
+                        <th>Update Status</th>
+                        <th>Delete order</th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    {contact.map((valo) => (
+                        <Fragment key={valo._id}>
+                            <Tbod   myne={valo._id} valo={valo} editable={edity} del={delet} />
+                             
 
-            <form  onSubmit={GetAll}>
-            
-                <button type='submit'> Get all parcel </button>
-                <br/>
-                <br/>
-                <Link to='/get'> Get a specific parcel</Link>
-
-                {loadData && <div role='alert' ><pre>{loadData}</pre> </div>}
-            </form>
+                        
+                        </Fragment>
+                           
+                    ))};
+                </tbody>
+            </table>
+        </div>
     );
 
 }
+/*
+{setLoadData.map((val) => (
+    <tr>
+        <td>{val._id}</td>
+        <td>{val.destination}</td>
+        <td>{val.location}</td>
+        <td>{val.status}</td>
+        <td>{<button onClick={edit}>edit</button>}</td>
+        <td>{<button onClick={cancel}>cancel</button>}</td>
+
+    </tr>
+))}
+*/
 
 export default ReceiveAll;

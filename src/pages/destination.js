@@ -1,12 +1,11 @@
 import { useRef, useState } from 'react';
+import PlacesAutocomplete from 'react-places-autocomplete';
 
-
-
-function DesForm() {
+function DesForm({myId}) {
     const desRef = useRef(null);
-    const passRef = useRef();
+    
     const [destina, setDestina] = useState();
-
+    const [address, setAddress] =useState('');
 
 
 
@@ -14,11 +13,11 @@ function DesForm() {
         event.preventDefault();
 
         const enteredDes = desRef.current.value;
-        const enteredPass = passRef.current.value;
-        const id = enteredPass;
+    
+        const id = myId;
 
         const dat = {
-             "id" : enteredPass,
+             "id" : id,
              "destination" : enteredDes
         }
 
@@ -36,7 +35,8 @@ function DesForm() {
            
         }).then(response => response.json())
             .then(data => {
-                setDestina(JSON.stringify(data))
+                window.location.reload();
+                setDestina('')
             });
 
 
@@ -46,12 +46,30 @@ function DesForm() {
         <div>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor='destination'> Destination</label>
-                    <input  required type='text' id='destination'name='destination'  ref={desRef} />
-                </div>
-                <div>
-                    <label htmlFor='id'> RefID </label>
-                    <input  required type='text' id='id' name='id' ref={passRef} />
+                <PlacesAutocomplete
+                    value={address}
+                    onChange={setAddress}
+                >
+                    {({ getInputProps, getSuggestionItemProps, suggestions, loading }) => (
+                        <div>
+                            <label htmlFor='destination'> Destination</label>
+                            <input {...getInputProps({ autoFocus: true })} required type='text' id='destination'name='destination'  ref={desRef} />
+                            
+                            <div>
+                                {loading && <div>loading...</div>}
+
+                                {suggestions.map(suggestion => (
+
+                                    <div  {...getSuggestionItemProps(suggestion)}>
+                                        <span key={suggestion.id} >{suggestion.description}</span>
+                                    </div>
+
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </PlacesAutocomplete>
+                    
                 </div>
                 <div>
                     <button type='submit'> Submit </button>

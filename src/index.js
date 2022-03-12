@@ -16,8 +16,6 @@ ReactDOM.render(
       <Route exact path= '*'  element={<App />}  />
         
      
-      
-
     </Routes>
 
   </BrowserRouter>,

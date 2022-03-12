@@ -1,75 +1,123 @@
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
+
+import PlacesAutocomplete from 'react-places-autocomplete';
+import { useState } from 'react/cjs/react.development';
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
+
 
 
 function PostForm(props) {
-    const userRef = useRef();
-    const passRef = useRef();
+    const [address, setAddress] = useState('');
+    const [address1, setAddress1] = useState('');
+    const [value, setValue] = useState();
+
     const destinationRef = useRef();
     const locationRef = useRef();
-    const emailRef = useRef();
-    const statusRef = useRef();
-    
+    const phoneRef = useRef();
+    const recipientRef = useRef();
+    var token = JSON.parse(localStorage.getItem('token'));
+    var name = token
+    var status = 'ready for pickup';
+
 
     function handleSubmit(event) {
         event.preventDefault();
 
-        const enteredUser = userRef.current.value;
-        const enteredPass = passRef.current.value;
         const enteredDes = destinationRef.current.value;
         const enteredLoc = locationRef.current.value;
-        const enteredEmail = emailRef.current.value;
-        const enteredstatus = statusRef.current.value;
-        
-        const GetData= {
-            name: enteredUser,
-            password: enteredPass,
+        const enteredPhone = phoneRef.current.value;
+        const enteredRecipient = recipientRef.current.value;
+
+        const GetData = {
+
             destination: enteredDes,
             location: enteredLoc,
-            email: enteredEmail,
-            status: enteredstatus
+            status: status,
+            name: name,
+            recipient: enteredRecipient,
+            phone: enteredPhone
         }
         props.sendData(GetData);
     };
 
-    return(
+    return (
         <div>
-        <form onSubmit={handleSubmit}>
+
             <div>
-                <label htmlFor='name'> Username</label>
-                <input  required type='text' id='name' ref={userRef} />
+                <form onSubmit={handleSubmit}>
+                    <br></br>
+                    <PlacesAutocomplete
+                        value={address}
+                        onChange={setAddress}
+                    >
+                        {({ getInputProps, getSuggestionItemProps, suggestions, loading }) => (
+                            <div>
+                                <label htmlFor='destination'> destination </label>
+                                <input  {...getInputProps({ autoFocus: true })} required type='text' id='destination' ref={destinationRef} />
+                                <div>
+                                    {loading && <div>loading...</div>}
+
+                                    {suggestions.map(suggestion => (
+
+                                        <div  {...getSuggestionItemProps(suggestion)}>
+                                            <span key={suggestion.id} >{suggestion.description}</span>
+                                        </div>
+
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                    </PlacesAutocomplete>
+                                        <br></br>
+                    <PlacesAutocomplete
+                        value={address1}
+                        onChange={setAddress1}
+                    >
+                        {({ getInputProps, getSuggestionItemProps, suggestions, loading }) => (
+                            <div>
+                                <label htmlFor='location'>pickup Location</label>
+                                <input  {...getInputProps({ autoFocus: true })} required type='text' id='location' ref={locationRef} />
+                                <div>
+                                    {loading && <div>loading...</div>}
+
+                                    {suggestions.map(suggestion => (
+
+                                        <div  {...getSuggestionItemProps(suggestion)}>
+                                            <span key={suggestion.id} >{suggestion.description}</span>
+                                        </div>
+
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                    </PlacesAutocomplete>
+                    <br></br>
+                    <div>
+                        <label htmlFor='phone'></label>
+                        <PhoneInput international defaultCountry="RU" countryCallingCodeEditable={false} value={value} onChange={setValue} required type='tel' id='phone' ref={phoneRef} placeholders='phone no'/>
+                    </div>
+                    <br></br>
+                    <div>
+                        <label htmlFor='recipient'> recipient</label>
+                        <input required type='text' id='recipient' ref={recipientRef} />
+                    </div>
+                    <br></br>
+                    <div>
+                        <button type='submit'> Submit </button>
+                    </div>
+
+                    
+                </form>
+
             </div>
-            <div>
-                <label htmlFor='password'> Password</label>
-                <input  required type='text' id='password' ref={passRef} />
-            </div>
-            <div>
-                <label htmlFor='destination'> destination </label>
-                <input  required type='text' id='destination' ref={destinationRef} />
-            </div>
-            <div>
-                <label htmlFor='location'> Location</label>
-                <input  required type='text' id='location' ref={locationRef} />
-            </div>
-            <div>
-                <label htmlFor='email'> Email</label>
-                <input  required type='email' id='email' ref={emailRef} />
-            </div>
-            <div>
-                <label htmlFor='status'> Status</label>
-                <input  required type='status' id='email' ref={statusRef} />
-            </div>
-            <div>
-                <button type='submit'> Submit </button>
-            </div>
-            
-            <div>
-                <Link to='/get'> Get your ordered parcel</Link>
-            </div>
-        </form>
-    </div>
+
+
+
+
+        </div>
 
 
     );
-}   
+}
 export default PostForm;

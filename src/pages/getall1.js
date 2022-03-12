@@ -1,30 +1,31 @@
-import { Link } from 'react-router-dom'
+import {  useState } from "react";
+import ShowFile from "../parcels/show";
 
-function Senet(props){
+function Senet(props) {
+    const [show, setShow] = useState(false);
 
-    return(
-        <div>
-            <ul>
-                <li>username: {props.lname}</li>
-                <li>password: {props.password}</li>
-                <li>Email: {props.email}</li>
-                <li>Location: {props.locate}</li>
-                <li>destination: {props.destination}</li>
-                <li>Status: {props.statu}</li>
-                <li >Id: {props.id}</li>
-                <Link to='/cancel'>delete data</Link>
-                <br/>
-                <Link to='/status'>update status</Link>
-                <br/>
-                <Link to='/destination'>update destination</Link>
-                <br/>
-                <br/>
-            </ul>
-        </div>
-        
-       
-    )
-
+    function edit(event) {
+        event.preventDefault();
+        setShow(true);
+    }
+    function cancel() {
+        setShow(show)
+    }
+            
+                return (
+                    <tr>
+                        <td>{props.id}</td>
+                        <td>{props.destination}</td>
+                        <td>{props.location}</td>
+                        <td>{props.status}</td>
+                        <td>{<button onClick={edit}>edit</button>}</td>
+                        <td>{<button onClick={cancel}>delete</button>}</td>
+                        
+                        {show && <ShowFile onSub={cancel} onCance={cancel} />}
+                    </tr>
+                    
+                )
+    
 }
 
 export default Senet;

@@ -1,23 +1,21 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 
 
-function LocForm(props) {
+function LocForm({ myne }) {
     const locRef = useRef();
-    const passRef = useRef();
-    const [stat, setStat] = useState();
-
+    
 
     function handleSubmit(event) {
         event.preventDefault();
 
         const enteredLoc = locRef.current.value;
-        const enteredPass = passRef.current.value;
-        const id = enteredPass
 
+        const id = myne;
+        console.log(id);
         const GetData = {
-            "status" : enteredLoc,
-            "id": enteredPass
-        }
+            "status": enteredLoc,
+            "id": id
+        };
         fetch(`https://web-app-senditb.herokuapp.com/parcel/${id}/status`, {
             method: 'put',
             body: JSON.stringify(GetData),
@@ -27,31 +25,36 @@ function LocForm(props) {
                 'Content-Type': 'application/json;charset=utf-8'
             },
         })
-            .then(response => 
+            .then(response =>
                 response.json()
             )
             .then(data => {
-
-                setStat(JSON.stringify(data));
+                window.location.reload();
+                console.log(data);
             });
+
     };
+
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <div>
+            
+                <form onSubmit={handleSubmit}>
+
                     <label htmlFor='status'> Status</label>
-                    <input  required type='text' id='status' ref={locRef} />
-                </div>
-                <div>
-                    <label htmlFor='id'> RefID </label>
-                    <input  required type='text' id='id' ref={passRef} />
-                </div>
-                <div>
-                    <button type='submit'> Submit </button>
-                </div>
-                {stat && <div><pre>{stat}</pre> </div>}
-            </form>
+
+                    <select id="status" name="status" ref={locRef} required >
+                        <option value="transit"> transit</option>
+                        <option value="delivered"> delivered</option>
+                    </select>
+
+                    <div>
+                        <button type='submit'> Submit </button>
+                    </div>
+
+                </form>
+            
+
         </div>
 
 

@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 
 function LoginForm(props) {
@@ -13,7 +14,7 @@ function LoginForm(props) {
         const enteredPass = passRef.current.value;
         
         const GetData= {
-            username: enteredUser,
+            email: enteredUser,
             password: enteredPass
         }
         props.sendData(GetData);
@@ -22,18 +23,25 @@ function LoginForm(props) {
     return(
         <div>
         <form onSubmit={handleSubmit}>
+            <br></br>
             <div>
-                <label htmlFor='username'> Username</label>
-                <input  required type='text' id='username' ref={userRef} />
+                <label htmlFor='email'> Email </label>
+                <input  required type='email' id='email' ref={userRef} />
             </div>
+            <br></br>
             <div>
                 <label htmlFor='password'> Password</label>
-                <input  required type='text' id='password' ref={passRef} />
+                <input  required type='password' id='password' ref={passRef} />
             </div>
+            <br></br>
             <div>
                 <button type='submit'> Submit </button>
             </div>
+            NOT YET A USER?<Link to='/register'> REGISTER</Link>
+            <br></br>
+            <Link to='/'>Go to homepage</Link>
         </form>
+        
     </div>
 
 

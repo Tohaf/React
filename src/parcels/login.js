@@ -2,14 +2,20 @@
 import LoginForm from "../pages/login";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+/*
+import { useNavigate } from "react-router";
+const History = useNavigate();
+    History('/post');
+*/
 
 function LoginParcel() {
     const [load, setLoad] = useState();
     const History = useNavigate();
-
+    
 
     function AdminDetail(GetData) {
-        fetch('https://web-app-senditb.herokuapp.com/register/login', {
+        console.log(GetData);
+        fetch('https://web-app-senditb.herokuapp.com/admin/login', {
             method: 'POST',
             body: JSON.stringify(GetData),
             headers: {
@@ -18,15 +24,21 @@ function LoginParcel() {
 
         }).then(response => response.json())
         .then((data) => {
-            if(data){
-                console.log(data);
-                History('/post');
             
+            if(data.status === 'error'){
+                setLoad('email or password not match');
 
+            }else if(GetData.email === "lmn@gmail.com" && GetData.password === 'toheeb'){
+                History('/receive')
+                setLoad(data)
+            }
+            else{
+                History('/get');
+                setLoad(data)
+                localStorage.setItem('token', JSON.stringify(data));
             }
         });
-        setLoad('username or password not match');
-
+       
     }
 
     return (
