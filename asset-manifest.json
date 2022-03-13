@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/senditff/static/css/main.871cb2f9.chunk.css",
-    "main.js": "/senditff/static/js/main.1ad3033d.chunk.js",
-    "main.js.map": "/senditff/static/js/main.1ad3033d.chunk.js.map",
+    "main.js": "/senditff/static/js/main.e11d6860.chunk.js",
+    "main.js.map": "/senditff/static/js/main.e11d6860.chunk.js.map",
     "runtime-main.js": "/senditff/static/js/runtime-main.d6276a22.js",
     "runtime-main.js.map": "/senditff/static/js/runtime-main.d6276a22.js.map",
     "static/css/2.97094cdd.chunk.css": "/senditff/static/css/2.97094cdd.chunk.css",
-    "static/js/2.d4598e4a.chunk.js": "/senditff/static/js/2.d4598e4a.chunk.js",
-    "static/js/2.d4598e4a.chunk.js.map": "/senditff/static/js/2.d4598e4a.chunk.js.map",
+    "static/js/2.b05993d0.chunk.js": "/senditff/static/js/2.b05993d0.chunk.js",
+    "static/js/2.b05993d0.chunk.js.map": "/senditff/static/js/2.b05993d0.chunk.js.map",
     "index.html": "/senditff/index.html",
     "static/css/2.97094cdd.chunk.css.map": "/senditff/static/css/2.97094cdd.chunk.css.map",
     "static/css/main.871cb2f9.chunk.css.map": "/senditff/static/css/main.871cb2f9.chunk.css.map",
-    "static/js/2.d4598e4a.chunk.js.LICENSE.txt": "/senditff/static/js/2.d4598e4a.chunk.js.LICENSE.txt",
+    "static/js/2.b05993d0.chunk.js.LICENSE.txt": "/senditff/static/js/2.b05993d0.chunk.js.LICENSE.txt",
     "static/media/delete.module.css": "/senditff/static/media/image.0fd758cb.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.d6276a22.js",
     "static/css/2.97094cdd.chunk.css",
-    "static/js/2.d4598e4a.chunk.js",
+    "static/js/2.b05993d0.chunk.js",
     "static/css/main.871cb2f9.chunk.css",
-    "static/js/main.1ad3033d.chunk.js"
+    "static/js/main.e11d6860.chunk.js"
   ]
 }
