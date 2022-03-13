@@ -1,5 +1,5 @@
-import Modal from "react-modal/lib/components/Modal";
-import { useState } from "react/cjs/react.development";
+import Modal from "react-modal";
+import { useState } from "react";
 import DesForm from "./destination";
 
 

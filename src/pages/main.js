@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react/cjs/react.development';
+import  Link  from 'react-router-dom';
+import  useEffect  from 'react';
 import classes from './main.module.css';
+import useState from 'react'
 
 function WelcomePage() {
     const [timec, setTimec] = useState();

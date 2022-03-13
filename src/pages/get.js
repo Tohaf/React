@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react/cjs/react.development";
+import { useEffect } from "react";
 
 import Purpos from "./get1";
 
