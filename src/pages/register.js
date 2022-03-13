@@ -60,7 +60,7 @@ function RegisterForm(props) {
     }
 
     function emailva(){
-        const vall = "^[a-zA-ZO\\d]+@[a-zA-ZO]+\\.[A-Za-z]+$";
+        const vall = "^[a-zA-ZO]+@[a-zA-ZO]+\\.[A-Za-z]+$";
         const enteredEmail = emailRef.current.value;
         if(enteredEmail.match(vall)){
             setEmailv('')
