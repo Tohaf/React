@@ -10,7 +10,7 @@ import './index.css';
 
 
 ReactDOM.render(
-  <BrowserRouter basename={process.env.PUBLIC_URL} >
+  <BrowserRouter basename="/senditff" >
     <Routes>
 
       <Route exact path= '*'  element={<App />}  />
