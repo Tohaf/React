@@ -51,7 +51,7 @@ function RegisterData() {
             
             Welcome {name}
             <br></br>
-            <Link to='./post' > create order</Link>
+            <Link to='/post' > create order</Link>
             <ul>
 
                 <li>Total Number Of Orders: <span id="order">{order && <span>{order}</span>}</span></li>
