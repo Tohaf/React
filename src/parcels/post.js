@@ -30,6 +30,7 @@ function PostParcel(){
     return(
         <div>
             <PostForm sendData={ AdminDetail } />
+            {data && <div><pre>{data}</pre></div>}
         </div>
         
 
