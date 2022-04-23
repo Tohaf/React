@@ -37,7 +37,7 @@ function Purpos({ val }) {
             alert("order already delivered/cancelled");
 
         } else if (window.confirm("are you sure you want to cancel")) {
-            fetch(`https://web-app-senditb.herokuapp.com/parcel/${id}/status`, {
+            fetch(`https://web-app-senditb.herokuapp.com/api/v1/parcels/${id}/status`, {
                 method: 'put',
                 body: JSON.stringify(GetData),
                 crossDomain: true,

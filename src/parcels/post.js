@@ -9,7 +9,7 @@ function PostParcel(){
 
     function AdminDetail(GetData){
 
-        fetch('https://web-app-senditb.herokuapp.com/parcel', {
+        fetch("https://web-app-senditb.herokuapp.com/api/v1/parcels", {
 
             method: 'POST',
             body: JSON.stringify(GetData),

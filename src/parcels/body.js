@@ -33,7 +33,7 @@ function Tbod({ valo, editable, del, myne }) {
         if (valo.status === 'transit' || valo.status === 'ready for pickup') {
             alert('cannot be deleted, Order still in transit and not yet delivered');
         } else if (window.confirm("are you sure you want to delete")) {
-            fetch(`https://web-app-senditb.herokuapp.com/parcel/${id}/cancel`, {
+            fetch(`https://web-app-senditb.herokuapp.com/api/v1/parcels/${id}/cancel`, {
                 method: 'DELETE',
                 mode: 'cors',
                 crossDomain: 'true',

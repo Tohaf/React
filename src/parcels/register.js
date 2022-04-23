@@ -10,7 +10,7 @@ function RegisterParcel(){
     
 
     function AdminDetail(GetData){
-        fetch('https://web-app-senditb.herokuapp.com/admin/pass', {
+        fetch('https://web-app-senditb.herokuapp.com/api/v1/auth/signup', {
             method: 'POST',
             body: JSON.stringify(GetData),
             headers:{

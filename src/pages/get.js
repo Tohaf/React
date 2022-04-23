@@ -18,7 +18,7 @@ function RegisterData() {
    
 
     useEffect(() => {
-        fetch(`https://web-app-senditb.herokuapp.com/parcel/:id/search?name=${name}`)
+        fetch(`https://web-app-senditb.herokuapp.com/api/v1/parcels/:id/search?name=${name}`)
             .then(
                 response => response.json())
             .then(data => {

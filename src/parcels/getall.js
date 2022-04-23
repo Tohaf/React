@@ -10,7 +10,7 @@ function ReceiveAll() {
 
 
     useEffect(() => {
-        fetch('https://web-app-senditb.herokuapp.com/parcel/getall')
+        fetch('https://web-app-senditb.herokuapp.com/api/v1/parcels')
             .then(
                 response => response.json()
             ).then((data) => {

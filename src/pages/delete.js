@@ -10,7 +10,7 @@ function CancelData() {
         event.preventDefault();
 
         const id = delRef.current.value
-        fetch(`http://localhost:5000/parcel/${id}/cancel`, {
+        fetch(`https://web-app-senditb.herokuapp.com/api/v1/parcels/${id}/cancel`, {
             method: 'DELETE',
             mode: 'cors',
             crossDomain: 'true',
