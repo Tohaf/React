@@ -1,4 +1,3 @@
-
 import { Routes, Route, Outlet } from "react-router";
 
 import CancelData from "./pages/delete";

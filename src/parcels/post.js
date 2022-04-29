@@ -2,6 +2,8 @@ import PostForm from "../pages/post";
 import { useState } from 'react';
 import { useNavigate } from "react-router";
 
+const token = localStorage.getItem('tokens');
+
 function PostParcel(){
     const Navigate = useNavigate();
     const [data, setData] = useState();
@@ -14,7 +16,8 @@ function PostParcel(){
             method: 'POST',
             body: JSON.stringify(GetData),
             headers:{
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'authorization': token
             }
         }).then(Response => Response.json())
         .then( (data) => {

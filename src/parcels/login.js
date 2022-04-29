@@ -35,7 +35,8 @@ function LoginParcel() {
             else{
                 History('/get');
                 setLoad(data)
-                localStorage.setItem('token', JSON.stringify(data));
+                localStorage.setItem('token', JSON.stringify(data.nama));
+                localStorage.setItem('tokens', data.token);
             }
         });
        

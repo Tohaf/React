@@ -2,6 +2,7 @@ import Modal from "react-modal";
 import { useState } from "react";
 import DesForm from "./destination";
 
+const token = localStorage.getItem('tokens');
 
 function Purpos({ val }) {
 
@@ -43,7 +44,8 @@ function Purpos({ val }) {
                 crossDomain: true,
                 mode: 'cors',
                 headers: {
-                    'Content-Type': 'application/json;charset=utf-8'
+                    'Content-Type': 'application/json;charset=utf-8',
+                    'authorization': token
                 },
             })
                 .then(response =>

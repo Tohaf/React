@@ -5,9 +5,11 @@ import { useEffect } from "react";
 
 import Purpos from "./get1";
 
+const token = localStorage.getItem('tokens');
+
 function RegisterData() {
-    var token = JSON.parse(localStorage.getItem('token'));
-    var name = token
+    const tokens = JSON.parse(localStorage.getItem('token'));
+    var name = tokens
 
     const [getResult, setGetResult] = useState([]);
     const [order, setOrder] = useState();
@@ -18,7 +20,11 @@ function RegisterData() {
    
 
     useEffect(() => {
-        fetch(`https://web-app-senditb.herokuapp.com/api/v1/parcels/:id/search?name=${name}`)
+        fetch(`https://web-app-senditb.herokuapp.com/api/v1/parcels/:id/search?name=${name}`, {
+            headers: {
+                'authorization': token,
+            }
+        })
             .then(
                 response => response.json())
             .then(data => {

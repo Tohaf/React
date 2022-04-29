@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
 
+const token = localStorage.getItem('tokens');
+
 function LocationData() {
     const locationRef = useRef(null);
     const nameRef = useRef(null);
@@ -7,8 +9,6 @@ function LocationData() {
 
     function SubmitHandler(event) {
         event.preventDefault();
-
-
 
             const location = locationRef.current.value;
             const Id = nameRef.current.value;
@@ -24,7 +24,8 @@ function LocationData() {
                 mode:'cors',
                 crossDomain:'true',
                 headers:{
-                    'Content-Type': 'application/json;chrset=utf-8'
+                    'Content-Type': 'application/json;chrset=utf-8',
+                    'authorization': token
                 }
             })
                 .then(response =>

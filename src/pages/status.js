@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 
+const token = localStorage.getItem('tokens');
 
 function LocForm({ myne }) {
     const locRef = useRef();
@@ -16,13 +17,14 @@ function LocForm({ myne }) {
             "status": enteredLoc,
             "id": id
         };
-        fetch(`http://localhost:5000/api/v1/parcels/${id}/status`, {
+        fetch(`https://web-app-senditb.herokuapp.com/api/v1/parcels/${id}/status`, {
             method: 'put',
             body: JSON.stringify(GetData),
             crossDomain: true,
             mode: 'cors',
             headers: {
-                'Content-Type': 'application/json;charset=utf-8'
+                'Content-Type': 'application/json;charset=utf-8',
+                'authorization': token
             },
         })
             .then(response =>

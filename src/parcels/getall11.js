@@ -1,10 +1,16 @@
 import { useEffect } from "react";
 import Senet from "../pages/getall1";
 
+const token = localStorage.getItem('tokens');
+
 function Https(){
 
     useEffect(() => {
-        fetch('https://web-app-senditb.herokuapp.com/api/v1/parcels')
+        fetch('https://web-app-senditb.herokuapp.com/api/v1/parcels', {
+            headers:{
+                'authorization': token
+            }
+        })
         .then(
             response => response.json()
         ).then((data) => {    

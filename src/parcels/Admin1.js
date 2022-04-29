@@ -2,6 +2,8 @@ import AdminForm from "../pages/admin";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
+const token = localStorage.getItem('tokens');
+
 function AdminParcel(){
     const [Valu, setValu] = useState(true);
     const Navigate = useNavigate();
@@ -12,7 +14,8 @@ function AdminParcel(){
             method: 'POST',
             body: JSON.stringify(GetData),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'authorization': token
             }
         }).then(response => response.json())
         .then((data) => {

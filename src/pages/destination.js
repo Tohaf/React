@@ -1,6 +1,9 @@
 import { useRef, useState } from 'react';
 import PlacesAutocomplete from 'react-places-autocomplete';
 
+const token = localStorage.getItem('tokens');
+
+
 function DesForm({myId}) {
     const desRef = useRef(null);
     
@@ -29,7 +32,8 @@ function DesForm({myId}) {
             mode: 'cors',
             crossDomain: 'true',
             headers:{
-                'Content-Type': 'application/json;charset=utf-8'
+                'Content-Type': 'application/json;charset=utf-8',
+                'authorization': token
             }
             
            

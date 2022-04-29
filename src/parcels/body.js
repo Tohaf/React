@@ -3,8 +3,9 @@ import Modal from "react-modal";
 
 import LocForm from "../pages/status";
 
-
 Modal.setAppElement('#root');
+
+const token = localStorage.getItem('tokens');
 
 
 function Tbod({ valo, editable, del, myne }) {
@@ -39,7 +40,8 @@ function Tbod({ valo, editable, del, myne }) {
                 crossDomain: 'true',
                 body: JSON.stringify(id),
                 headers: {
-                    'Content-Type': 'application/json:charset=utf-8'
+                    'Content-Type': 'application/json:charset=utf-8',
+                    'authorization': token,
                 }
             })
                 .then(response => response.json())

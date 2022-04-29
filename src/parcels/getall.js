@@ -4,13 +4,19 @@ import Tbod from "./body";
 import LocForm from "../pages/status";
 import { Link } from 'react-router-dom';
 
+const token = localStorage.getItem('tokens');
+
 function ReceiveAll() {
     const[contact, setContact] = useState([])
     const [load, setLoad] = useState(false);
 
 
     useEffect(() => {
-        fetch('https://web-app-senditb.herokuapp.com/api/v1/parcels')
+        fetch('https://web-app-senditb.herokuapp.com/api/v1/parcels', {
+            headers: {
+                'authorization': token,
+            }
+        })
             .then(
                 response => response.json()
             ).then((data) => {

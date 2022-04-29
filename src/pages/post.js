@@ -5,7 +5,6 @@ import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 
 
-
 function PostForm(props) {
     const [address, setAddress] = useState('');   
     const [valu, setValu] = useState(null);

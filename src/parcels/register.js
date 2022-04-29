@@ -2,7 +2,7 @@ import { useNavigate } from "react-router";
 import { useState } from "react";
 import RegisterForm from "../pages/register";
 
-
+const token = localStorage.getItem('token');
 
 function RegisterParcel(){
     const [stat, setStat] = useState();
@@ -14,7 +14,8 @@ function RegisterParcel(){
             method: 'POST',
             body: JSON.stringify(GetData),
             headers:{
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'authorization': token
                 
             }
         }).then(response => response.json())
