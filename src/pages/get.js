@@ -20,7 +20,7 @@ function RegisterData() {
    
 
     useEffect(() => {
-        fetch(`https://web-app-senditb.herokuapp.com/api/v1/parcels/:id/search?name=${name}`, {
+        fetch(`https://web-app-senditb.herokuapp.com/api/v1/users/:id/parcels?name=${name}`, {
             headers: {
                 'authorization': token,
             }
